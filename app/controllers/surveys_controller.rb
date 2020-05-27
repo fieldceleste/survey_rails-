@@ -1,35 +1,29 @@
 class SurveysController < ApplicationController
 
   def index
-    def index
-      @surveys = Survey.all
-      render :index
-    end
+    @surveys = Survey.all
+    render :index
   end
-
+    
   def new
-    def new
-      @survey = Survey.new
+    @survey = Survey.new
+    render :new
+  end
+  
+  def create
+    @survey = Survey.new(survey_params)
+    if @survey.save
+      redirect_to surveys_path
+    else
       render :new
     end
   end
 
-  def create
-      @survey = Survey.new(survey_params)
-      if @survey.save
-        redirect_to surveys_path
-      else
-        render :new
-      end
-    end
-  end
-
   def edit
-      @survey = Survey.find(params[:id])
-      render :edit
-    end
+    @survey = Survey.find(params[:id])
+    render :edit
   end
-
+  
   def show
     @survey = Survey.find(params[:id])
     render :show

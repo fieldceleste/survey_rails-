@@ -1,6 +1,6 @@
-<h1>question: <%= @question.name %></h1>
-<h2>Album: <%= @survey.name %></h2>
-<h3><%= @question.lyrics %></h3>
+<h1>Question: <%= @question.name %></h1>
+<h2>Survey: <%= @survey.name %></h2>
+
 
 <p><%= link_to "Edit question", edit_survey_question_path(@survey, @question) %></p>
 <p><%= link_to "Delete question", survey_question_path(@survey, @question),
