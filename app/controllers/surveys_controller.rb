@@ -13,6 +13,7 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
+      flash[:notice] = "Survey successfully added!"
       redirect_to surveys_path
     else
       render :new
@@ -32,6 +33,7 @@ class SurveysController < ApplicationController
   def update
     @survey = Survey.find(params[:id])
     if @survey.update(survey_params)
+      flash[:alert] = "Survey successfully updated!"
       redirect_to surveys_path
     else
       render :edit

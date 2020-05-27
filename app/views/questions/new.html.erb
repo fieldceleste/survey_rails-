@@ -3,6 +3,9 @@
 <%= form_for [@survey, @question] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
- 
+  <%= f.label :answer1 %>
+  <%= f.text_field :answer1 %>
+  <%= f.label :answer2 %>
+  <%= f.text_field :answer2 %>
   <p><%= f.submit %></p>
 <% end %>
