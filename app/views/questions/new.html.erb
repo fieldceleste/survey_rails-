@@ -3,9 +3,12 @@
 <%= form_for [@survey, @question] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.label :answer1 %>
-  <%= f.text_field :answer1 %>
-  <%= f.label :answer2 %>
-  <%= f.text_field :answer2 %>
+<div class="radio">
+  <%= f.radio_button :answer1, 'Blue', :checked => true %> Favorite color. 
+  <br />
+  <%= f.radio_button :answer2, 'Red',true, !!params[:answer2] %> Favorite color. 
+</div>
   <p><%= f.submit %></p>
 <% end %>
+
+ 

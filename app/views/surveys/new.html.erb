@@ -1,7 +1,11 @@
 <h1>Start a New Survey!</h1>
 
 <%= form_for @survey do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit  %>
+<div class="form-group">
+  <%= f.label :name, "Survey Name", class: "col-md-1 control-label" %>
+   <div class="col-md-2">
+  <%= f.text_field :name,  class: "form-control" %>
+  </div>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-warning" %>
 <% end %>
